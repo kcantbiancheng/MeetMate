@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+
+actor 用户 as User
+actor "Group 创建者" as Owner
+
+rectangle "MeetMate 多团队智能排期系统" {
+  usecase "注册 / 登录" as UC1
+  usecase "管理个人日程" as UC2
+  usecase "创建 Group" as UC3
+  usecase "加入 Group" as UC4
+  usecase "创建待排期活动" as UC5
+  usecase "提交空闲时间" as UC6
+  usecase "查看智能推荐结果" as UC7
+  usecase "确认最终活动时间" as UC8
+  usecase "同步到个人日程" as UC9
+  usecase "查看日程提醒" as UC10
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC6
+User --> UC7
+User --> UC10
+
+Owner --> UC5
+Owner --> UC8
+UC8 --> UC9
+
+@enduml
